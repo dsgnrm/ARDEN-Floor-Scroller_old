@@ -1,9 +1,5 @@
-// import ReactDOM, {render} from 'react-dom'
-import React, {useRef, useState, Suspense, useEffect} from 'react'
-import * as THREE from 'three'
-import {Canvas, useFrame, useThree, extend} from 'react-three-fiber'
-import {useGLTF} from '@react-three/drei/core/useGLTF'
-import {Html, PerspectiveCamera, OrbitControls, Sphere} from '@react-three/drei'
+import React, {useState, Suspense, useEffect} from 'react'
+import { useFrame, } from 'react-three-fiber'
 import Model from './gltfjsx/Building'
 import './BuildingShellLoader.css'
 
@@ -16,7 +12,7 @@ function LookAt() {
   camera.lookAt(0, 50, 0);
   */
 
-  //-_-_-_-_- Awyas Focus
+  //-_-_-_-_- Aways Focus
   useFrame(state => {
     state
       .camera
@@ -34,9 +30,7 @@ function BuildingShellLoader({value}) {
   const [selectedID,
     setSelectedID] = useState();
 
-
   useEffect(() => {
-
     if (value > 0 && value < 60) {
       setSelectedID(0)
     } else if (value > 60 && value < 100) {
@@ -56,19 +50,12 @@ function BuildingShellLoader({value}) {
   }, [value])
 
   // +++++++++++++++++ PLaceholder
-  let floors = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6
-  ];
-  let numFloors = floors.length
+  let floors = [1,2,3,4,5,6];
+
+  // let numFloors = floors.length
   // +++++++++++++++++
 
   const scale = 0.24
-
   return (
 
     <group
@@ -77,12 +64,8 @@ function BuildingShellLoader({value}) {
       rotation={[.2, 2, 0]}>
       <Suspense fallback={null}>
         <Model currentMesh={selectedID} value={value}/>
-
       </Suspense>
-
     </group>
-
   )
 }
-
 export default BuildingShellLoader

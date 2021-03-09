@@ -16,7 +16,7 @@ export default function Model(props) {
 
   const selectedMaterial = new THREE.MeshPhysicalMaterial({color: 'green'})
   const unselectedMaterial = new THREE.MeshPhysicalMaterial({color: '#D4D4D4'})
-  // +++++++++++++++++++ Generates every time?
+  // +++++++++++++++++++ Reloads every time?
   const Building = () => (floors.map((_, i) => <mesh
     key={i}
     material={id === i
