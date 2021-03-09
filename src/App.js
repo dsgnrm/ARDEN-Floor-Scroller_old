@@ -8,7 +8,6 @@ import BuildingShellLoader from './components/BuildingShellLoader/BuildingShellL
 import './App.css'
 
 const numFloors = 5;
-// const PlaneOffset = React.createContext(40);
 const PlaneOffset = 40;
 
 function Plans({yPos, xPos}) {
