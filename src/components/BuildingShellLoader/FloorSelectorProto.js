@@ -4,11 +4,9 @@ import * as THREE from 'three'
 import {Canvas, useFrame, useThree, extend} from 'react-three-fiber'
 import {useGLTF} from '@react-three/drei/core/useGLTF'
 import {Html, PerspectiveCamera, OrbitControls, Sphere} from '@react-three/drei'
-import BuildingShellLoader from './components/BuildingShellLoader/BuildingShellLoader'
-import './App.css'
+import BuildingShellLoader from './BuildingShellLoader'
+import './FloorSelectorProto.css'
 
-const numFloors = 5;
-// const PlaneOffset = React.createContext(40);
 const PlaneOffset = 40;
 
 function Plans({yPos, xPos}) {
@@ -38,10 +36,10 @@ function Plans({yPos, xPos}) {
   )
 }
 
-function App() {
+function FloorSelectorProto() {
 
   const xPos = 20;
-  
+
   let [yPos,
     setyPos] = useState(PlaneOffset)
 
@@ -50,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    
       <div className="container1">
         <div id="div2" onWheel= {(e) => wheel(e)}>
           <div id="div3">
@@ -71,9 +69,8 @@ function App() {
         </div>
       </div>
 
-    </div>
 
   );
 }
 
-export default App;
+export default FloorSelectorProto;
